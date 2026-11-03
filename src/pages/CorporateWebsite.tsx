@@ -164,7 +164,7 @@ function Header() {
   return <header className="site-header">
     <div className="container header-inner">
       <Link to="/" className="brand" aria-label="Netcraaftix home">
-        <span className="brand-mark">N</span><span>Netcraaftix<span className="brand-dot">.</span><small>Technology & Infrastructure</small></span>
+        <img className="brand-logo" src="/netcraaftix-logo.svg" alt="Netcraaftix — Technology & Infrastructure" />
       </Link>
       <nav className="desktop-nav">{nav.map(([label, href]) => <a key={label} href={href}>{label}</a>)}</nav>
       <a className="button button-primary header-cta" href="/#contact">Discuss a project <ArrowUpRight size={17}/></a>
@@ -221,7 +221,7 @@ function ServiceCard({ service }: { service: Service }) {
 
 function Footer() {
   return <footer className="site-footer"><div className="container footer-grid">
-    <div><Link to="/" className="brand footer-brand"><span className="brand-mark">N</span><span>Netcraaftix<span className="brand-dot">.</span><small>Technology & Infrastructure</small></span></Link><p className="footer-description">Technology solutions for businesses, institutions and homes. It’s all about perfection.</p></div>
+    <div><Link to="/" className="brand footer-brand"><img className="brand-logo" src="/netcraaftix-logo.svg" alt="Netcraaftix — Technology & Infrastructure" /></Link><p className="footer-description">Technology solutions for businesses, institutions and homes. It’s all about perfection.</p></div>
     <div><h4>Explore services</h4>{services.slice(0,5).map(s => <Link key={s.slug} to={`/${s.slug}`}>{s.cardTitle}</Link>)}</div>
     <div><h4>Contact</h4><a href={`tel:+${PHONE}`} onClick={() => track("phone_click", { lead_channel: "phone" })}>{PHONE_DISPLAY}</a><a href={`mailto:${EMAIL}`}>{EMAIL}</a><span>Meerpet, Hyderabad, Telangana</span><Link to="/privacy-policy">Privacy policy</Link></div>
   </div><div className="container footer-bottom">© {new Date().getFullYear()} Netcraaftix. All rights reserved.</div></footer>;
