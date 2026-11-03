@@ -279,7 +279,7 @@ function HomePage() {
 }
 
 function ServiceLandingPage() {
-  const slug = window.location.pathname.replace(/^\\//, "");
+  const slug = window.location.pathname.slice(1);
   const service = services.find(item => item.slug === slug) || services[0];
   const Icon = service.icon;
   useEffect(() => {
