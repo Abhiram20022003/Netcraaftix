@@ -272,6 +272,9 @@ function ServicePage() {
     let meta = document.querySelector('meta[name="description"]');
     if (!meta) { meta = document.createElement("meta"); meta.setAttribute("name", "description"); document.head.appendChild(meta); }
     meta.setAttribute("content", `${service.summary} Contact Netcraaftix for ${service.cardTitle.toLowerCase()} in Hyderabad and Telangana.`);
+    let keywords = document.querySelector('meta[name="keywords"]');
+    if (!keywords) { keywords = document.createElement("meta"); keywords.setAttribute("name", "keywords"); document.head.appendChild(keywords); }
+    keywords.setAttribute("content", service.keywords.join(", "));
   }, [service]);
   return <div className="corporate-site"><Header/><main>
     <section className="service-hero"><div className="service-hero-image"><img src={service.image} alt={service.cardTitle + " project"} fetchPriority="high"/></div><div className="service-hero-shade"/><div className="container service-hero-content"><Link to="/" className="back-link">Home <ChevronRight size={14}/> Services</Link><div className="service-title-icon"><Icon size={24}/></div><div className="eyebrow eyebrow-light">Netcraaftix · Hyderabad, Telangana</div><h1>{service.title}</h1><p>{service.intro}</p><div className="hero-actions"><a className="button button-primary" href="#enquiry">Request a project quote <ArrowRight size={18}/></a><a className="button button-glass" href={`tel:+${PHONE}`} onClick={() => track("phone_click", { lead_channel: "phone", service: service.cardTitle })}><Phone size={17}/> Call {PHONE_DISPLAY}</a></div></div></section>
