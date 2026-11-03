@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
-  ArrowRight, ArrowUpRight, Check, ChevronDown, Code2, Cpu, GraduationCap,
-  Headphones, Menu, Network, Phone, ShieldCheck, Video, Wifi, X, Zap
+  ArrowRight, ArrowUpRight, Check, Code2, GraduationCap,
+  Menu, Network, Phone, ShieldCheck, Video, X, Zap
 } from "lucide-react";
 
 const PHONE = "918977118189";
