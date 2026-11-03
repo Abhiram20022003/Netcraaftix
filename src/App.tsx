@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HomePage, ServiceLandingPage } from "./pages/LeadFocusedWebsite";
 import NotFound from "./pages/NotFound";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 const queryClient = new QueryClient();
 
@@ -16,6 +17,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/software-development-hyderabad" element={<ServiceLandingPage />} />
           <Route path="/networking-solutions-hyderabad" element={<ServiceLandingPage />} />
           <Route path="/cctv-installation-hyderabad" element={<ServiceLandingPage />} />
