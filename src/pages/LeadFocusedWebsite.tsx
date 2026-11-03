@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   ArrowRight, ArrowUpRight, Check, ChevronDown, Code2, Cpu, GraduationCap,
   Headphones, Menu, Network, Phone, ShieldCheck, Video, Wifi, X, Zap
@@ -279,7 +279,7 @@ function HomePage() {
 }
 
 function ServiceLandingPage() {
-  const { slug } = useParams();
+  const slug = window.location.pathname.replace(/^\\//, "");
   const service = services.find(item => item.slug === slug) || services[0];
   const Icon = service.icon;
   useEffect(() => {
